@@ -1,0 +1,27 @@
+{
+  "required" : true ,
+  "$schema" : "http://json-schema.org/draft-03/schema" ,
+  "type" : "object" ,
+  "properties" : {
+    "flightSchedules" : {
+      "type" : "array" ,
+      "required" : true ,
+      "items" : [
+        {
+          "type" : "object" ,
+          "properties" : {
+            "flightNumber" : {
+              "type" : "string" ,
+              "required" : true
+            } ,
+            "flightTime" : {
+              "type" : "string" ,
+              "required" : true
+            }
+          }
+
+        }
+      ]
+    }
+  }
+}

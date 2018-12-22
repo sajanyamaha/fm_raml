@@ -1,0 +1,7 @@
+{
+  "seatingStyleType":"3-3x200rows need to discuss on the seat style names for rendereing the seatmaps",
+  "rows": 4,
+  "columns": 3,
+  "numberOfSeats":600,
+  "numberOfDecks":2
+}

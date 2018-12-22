@@ -1,0 +1,12 @@
+{
+  "airlineNames": [
+    {
+      "airlineName": "Emirates",
+      "airlineCode": "EK"
+    },
+    {
+      "airlineName": "flydubai",
+      "airlineCode": "FZ"
+    }
+  ]
+}

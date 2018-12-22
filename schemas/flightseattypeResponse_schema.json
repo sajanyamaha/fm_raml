@@ -1,0 +1,27 @@
+{
+  "required" : true ,
+  "$schema" : "http://json-schema.org/draft-03/schema" ,
+  "type" : "object" ,
+  "properties" : {
+    "seatingStyleType" : {
+      "type" : "string" ,
+      "required" : true
+    } ,
+    "rows" : {
+      "type" : "number" ,
+      "required" : true
+    },
+    "columns" : {
+      "type" : "number" ,
+      "required" : true
+    },
+    "numberOfSeats" : {
+      "type" : "number" ,
+      "required" : true
+    },
+    "numberOfDecks" : {
+      "type" : "number" ,
+      "required" : true
+    }
+  }
+}

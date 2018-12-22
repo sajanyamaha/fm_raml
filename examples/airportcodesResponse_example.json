@@ -1,0 +1,16 @@
+{
+  "airportCodes": [
+    {
+      "airportCode": "DXB",
+      "airportName": "Dubai international airport",
+      "country": "United Arab Emirates",
+      "city": "Dubai"
+    },
+    {
+      "airportCode": "TRV",
+      "airportName": "Trivandrum International Airport",
+      "country": "India",
+      "city": "Kerala"
+    }
+  ]
+}

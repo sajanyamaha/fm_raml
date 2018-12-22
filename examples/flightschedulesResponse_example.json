@@ -1,0 +1,16 @@
+{
+  "flightSchedules": [
+    {
+      "flightNumber": "EK523",
+      "flightTime": "1545"
+    },
+    {
+      "flightNumber": "EK523",
+      "flightTime": "1045"
+    },
+    {
+      "flightNumber": "EK523",
+      "flightTime": "1345"
+    }
+  ]
+}

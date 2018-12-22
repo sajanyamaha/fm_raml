@@ -1,0 +1,35 @@
+{
+  "required" : true ,
+  "$schema" : "http://json-schema.org/draft-03/schema" ,
+  "type" : "object" ,
+  "properties" : {
+    "airportCodes" : {
+      "type" : "array" ,
+      "required" : true ,
+      "items" : [
+        {
+          "type" : "object" ,
+          "properties" : {
+            "airportCode" : {
+              "type" : "string" ,
+              "required" : true
+            } ,
+            "airportName" : {
+              "type" : "string" ,
+              "required" : true
+            },
+            "country" : {
+              "type" : "string" ,
+              "required" : true
+            },
+            "city" : {
+              "type" : "string" ,
+              "required" : true
+            }
+          }
+
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,123 @@
+#%RAML 0.8
+title: flightmate
+version: v1
+baseUri: https://{apiMode}.flightmate.com/{version}
+schemas:
+  - flightnamesResponse: !include schemas/airlineNames_response_schema.json
+  - airportcodesResponse: !include schemas/airportcodesResponse_schema.json
+  - flightschedulesResponse: !include schemas/flightschedulesResponse_schema.json
+  - flighttypeResponse: !include schemas/flighttypeResponse_schema.json
+  - flightseattypeResponse: !include schemas/flightseattypeResponse_schema.json
+
+/flight:
+  /flightnames:
+    get:
+      description: get all the airline names and codes to populate airline dropdown
+      responses:
+        200:
+          body:
+            application/json:
+              schema: flightnamesResponse
+              example: !include examples/airlineNames_response_example.json
+  /airportcodes:
+    get:
+      description: get all the airport codes and airport names also if possible to populate origin destination fields .
+      responses:
+        200:
+          body:
+            application/json:
+              schema: airportcodesResponse
+              example: !include examples/airportcodesResponse_example.json
+  /flightschedules:
+    get:
+      description: This GET gets the flight schedule data
+      queryParameters:
+        airlineCode:
+          description: airline code or name , eg EK,Emirates
+          type: string
+          required: true
+        originAirport:
+          description: origin airport code eg , DXB
+          type: string
+          required: true
+        destinationAirport:
+          description: destination airport code eg , DXB
+          type: string
+          required: true
+        dateOfDeparture:
+          description: Date of travel start , we will entertain the PTP travels only for now,ie , even the return travel would be considered as two PTP travel.
+          type: string
+          required: true
+      responses:
+        200:
+          body:
+            application/json:
+              schema: flightschedulesResponse
+              example: !include examples/flightschedulesResponse_example.json
+  /flighttype:
+    get:
+      description: flight number , eg EK523
+      queryParameters:
+        flightNumber:
+          description: flight number , eg EK523
+          type: string
+          required: true
+        originAirport:
+          description: origin airport code eg , DXB
+          type: string
+          required: true
+        destinationAirport:
+          description: destination airport code eg , DXB
+          type: string
+          required: true
+        dateOfDeparture:
+          description: Date of travel start , we will entertain the PTP travels only for now,ie , even the return travel would be considered as two PTP travel.
+          type: string
+          required: true
+      responses:
+        200:
+          body:
+            application/json:
+              schema: flighttypeResponse
+              example: !include examples/flighttypeResponse_example.json
+  /flightseattype:
+    get:
+      description: This POST gets the flight seating details with flight flightNumber OR ORG DEST details, refer www.seatguru.com/airlines/Emirates_Airlines/fleetinfo.php
+      queryParameters:
+        flightType:
+          description: Widebody Jets
+          type: string
+          required: true
+        flightModel:
+          description: Airbus A380-800
+          type: string
+          required: true
+      responses:
+        200:
+          body:
+            application/json:
+              schema: flightseattypeResponse
+              example: !include examples/flightseattypeResponse_example.json
+
+/user:
+    /userLogin:
+      get:
+      post:
+    /userProfile:
+      get:
+      post:
+    /userTravelPlans:
+      get:
+      post:
+    /userSeats:
+      get:
+      post:
+    /userChats:
+      get:
+      post:
+      /userChatWaitingapproval:
+        get:
+        post:
+      /userChatRequestsMade:
+        get:
+        post:
